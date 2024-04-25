@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+
+        <div class="content container",class="content2 contenedor">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        <div>
+            <body background="https://images.pexels.com/photos/7319336/pexels-photo-7319336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></body>
+           
+            <h2>Bienvenido a mi blog me presento brevemente soy Isaac y mediante este blog podras hablar y compartir sobre ti
+                tus intereses podras encontrar miles de historias y hacer grandes compañias con persona que comparten tus gustos
+                espero que disfrutes leyendo blog y encuentres lo que buscas.
+            </h2>
+            <h1>NORMAS DEL BLOG:</h1>
+             <h2><ol>
+                <li>No insultar</li>
+                <li>Respetar la opinion de los otros</li>
+                <li>No amenazar</li>
+                <li>0 contenido sexual(fotos,videos)</li>
+            </ol></h2>
+        </div>
+    </body>
+</html>
